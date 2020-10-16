@@ -1,0 +1,39 @@
+﻿/*Структура сайта*/
+div.mid{width: 1000px; margin: 0 auto;}
+div.header{background-size: 30%;}
+div.footer{margin: 20px 0;
+			text-align: center;
+			text-transform: uppercase;}
+/*Шапка сайта*/
+div.topmenu{float:center;
+			height:80px;
+			line-height: 80px;}
+div.topmenu a{margin: 0 0 0 50px;
+			text-decoration: none;
+			color:#000000;}
+div.topmenu a:hover{margin: 0 0 0 50px;
+					color:#E22626;
+					transition: all 0.45s;}
+/*Контент сайта*/
+div.content{}
+/*Адаптивный дизайн*/
+@media screen and (max-width: 999px){
+	div.header{background-color:#212121;
+			background-size: 300px;}
+	div.mid{width: 95%;}
+	div.afisha h3{font-size: 20px;}
+	div.block{width: 48%;}
+	div.anons h3{font-size: 100%;}
+	div.anons p{font-size: 90%;}
+	div.anons img{width:100%;}
+	div.rek img{width: 100%;}
+}
+@media screen and (max-width: 620px){
+	div.header{text-align: center;background-position: center;}
+	div.topmenu{float:none;}
+	div.afisha img{float:none;}
+	div.block {float:none;}
+	div.block:nth-of-type(even){float:none;}
+	div.block{width: auto; margin-bottom: 40px;}
+	div.footer span{margin:10px 0;display: block;}
+}
