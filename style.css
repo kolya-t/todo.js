@@ -15,7 +15,25 @@ div.topmenu a:hover{margin: 0 0 0 50px;
 					color:#E22626;
 					transition: all 0.45s;}
 /*Контент сайта*/
-div.content{}
+.dzamilpersaneg {
+  padding:0;
+  list-style: none;
+}
+.dzamilpersaneg li{
+  padding:5px;
+  cursor:pointer;
+}
+.dzamilpersaneg li:before {
+  padding-right: 9px;
+  font-weight: bold;
+  color: #6f6c6c;
+  content: "\2714";
+  transition-duration: 0.4s;
+}
+.dzamilpersaneg li:hover:before {
+  color: #2369a5;
+  content: "\2714";
+}
 /*Адаптивный дизайн*/
 @media screen and (max-width: 999px){
 	div.header{background-color:#212121;
