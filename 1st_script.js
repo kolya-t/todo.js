@@ -3,30 +3,27 @@ $(document).ready(function(){
         $.getJSON('http://localhost:5000/tasks', function(data) {
 	    	window.console&&console.log(data)
 
-	    	var TheList = $('ul.dzamilpersaneg')
-
+	    	var TheList = $('#quask_lists')
+/*
 	    	$("button").click(function(){
        			const $ul = $('<ul>', {class: "dzamilpersaneg"}).append(
-					  data.map(task => 
+					  data.map(task =>
 					    $("<li>").append($("<a>").text(task))
 					  )
-					);window.console&&console.log(data.map(task => 
+					);window.console&&console.log(data.map(task =>
 					    $("<li>").append($("<a>").text(task))
 					  )
 					);
-    		});
+    		});*/
 
 	    	$.each(data, function(i,item){
+				var aaa = $('<a/>')
+					.text(item.description);
 
 		    	var li = $('<li/>')
-		        .addClass(i + 1)
-		        .append(TheList);
-		   		
-		   		var aaa = $('<a/>')
-		        .text(item.description)
-		        .appendTo(li);
+					.append(aaa);
 
-	    		window.console&&console.log(aaa)
+		    	TheList.append(li);
 	    	});
 
         });
