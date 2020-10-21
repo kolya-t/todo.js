@@ -3,7 +3,7 @@ $(document).ready(function(){
         $.getJSON('http://localhost:5000/tasks', function(data) {
 	    	window.console&&console.log(data)
 
-	    	var TheList = $('#quask_lists')
+	    	var TheList = $('ul.dzamilpersaneg');
 /*
 	    	$("button").click(function(){
        			const $ul = $('<ul>', {class: "dzamilpersaneg"}).append(
