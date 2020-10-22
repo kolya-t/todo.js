@@ -27,11 +27,11 @@ div.topmenu a:hover{margin: 0 0 0 50px;
   padding-right: 9px;
   font-weight: bold;
   color: #6f6c6c;
-  content: "\2714";
+  content: "\2711";
   transition-duration: 0.4s;
 }
 .dzamilpersaneg li:hover:before {
-  color: #2369a5;
+  color: #00cc66;
   content: "\2714";
 }
 /*Адаптивный дизайн*/

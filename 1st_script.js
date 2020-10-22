@@ -1,31 +1,31 @@
 $(document).ready(function(){
-    $('#example-4').click(function(){
-        $.getJSON('http://localhost:5000/tasks', function(data) {
-	    	window.console&&console.log(data)
+    $.getJSON('http://localhost:5000/tasks', function(data) {
+    	//window.console&&console.log(data)
+    	var TheList = $('ul.dzamilpersaneg');
 
-	    	var TheList = $('ul.dzamilpersaneg');
-/*
-	    	$("button").click(function(){
-       			const $ul = $('<ul>', {class: "dzamilpersaneg"}).append(
-					  data.map(task =>
-					    $("<li>").append($("<a>").text(task))
-					  )
-					);window.console&&console.log(data.map(task =>
-					    $("<li>").append($("<a>").text(task))
-					  )
-					);
-    		});*/
+    	$.each(data, function(i,item){
+			var aaa = $('<a/>')
+				.text(item.description + ' ' + item.is_done);
 
-	    	$.each(data, function(i,item){
-				var aaa = $('<a/>')
-					.text(item.description);
+			aaa.on('click', function (event) { 
+				console.log('clicked' + item.id)
 
-		    	var li = $('<li/>')
-					.append(aaa);
+				var patch = {'is_done': 1 - item.is_done}
+				console.log(patch)
+				$.ajax({
+				   type: 'PATCH',
+				   url: 'http://localhost:5000/tasks/' + item.id,
+				   data: JSON.stringify(patch),
+				   processData: false,
+				   contentType: 'application/json',
+				});
+			})
 
-		    	TheList.append(li);
-	    	});
+	    	var li = $('<li/>')
+				.addClass('Quask')
+				.append(aaa);
 
-        });
+	    	TheList.append(li);
+    	});
     });
 });
