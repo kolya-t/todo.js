@@ -28,7 +28,6 @@ function input_send(){
 
 function input_out_of_focus(){
     $('input.addition_input').blur(function(){
-        input_send()
         $(this).hide()
         $('button.addition_button').hide()
         $('a.addition_a').show()
@@ -45,9 +44,9 @@ function switching_to_input(){
         $('input.addition_input').show()
         $('button.addition_button').show()
         $('input.addition_input').focus()
-        input_send()
-        input_out_of_focus()
     })
+    input_send()
+    input_out_of_focus()
 }
 
 
