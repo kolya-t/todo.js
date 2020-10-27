@@ -42,7 +42,7 @@ function Initial_list_load() {
         });
         
 
-            window.console&&console.log(TheList)
+            //window.console&&console.log(TheList)
     });
 };
 
