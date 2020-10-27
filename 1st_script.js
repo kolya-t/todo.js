@@ -22,7 +22,7 @@ function Change_is_done(item, aaa){
 
 function Initial_list_load() {
     $.getJSON('http://localhost:5000/tasks', function(data) {
-        window.console&&console.log(data)
+        //window.console&&console.log(data)
         var TheList = $('ul.dzamilpersaneg');
 
         $.each(data, function(i,item){
@@ -38,8 +38,11 @@ function Initial_list_load() {
                 .addClass('Quask')
                 .append(aaa);
 
-            TheList.append(li);            
+            TheList.append(li);
         });
+        
+
+            window.console&&console.log(TheList)
     });
 };
 
