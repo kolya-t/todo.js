@@ -35,7 +35,7 @@ div.topmenu a:hover{margin: 0 0 0 50px;
   content: "\2712";
 }
 
-a[is_done="1"]{
+.dzamilpersaneg a[is_done="1"]{
   text-decoration: line-through;
 }
 
