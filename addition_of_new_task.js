@@ -19,7 +19,8 @@ function input_send(){
                 error: function(){
                     alert('An error accured!');
                 }        
-            })            
+            })
+
             console.log($('ul.dzamilpersaneg'))            
         }
     })
@@ -48,5 +49,6 @@ function switching_to_input(){
         input_out_of_focus()
     })
 }
+
 
 $(document).ready(switching_to_input)
