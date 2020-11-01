@@ -1,4 +1,5 @@
 function input_send(){
+    login_pare = first_autentification()
     $('button.addition_button').on('mousedown',function(){  
         var input_value = $("input.addition_input").val() 
         if (input_value.trim() != '') {
@@ -8,12 +9,13 @@ function input_send(){
             $.ajax({
                 type: 'POST',
                 url: 'http://localhost:5000/tasks',
+                headers: {'Authorization': 'Basic ' + login_pare},
                 data: JSON.stringify(post),
                 processData: false,
                 contentType: 'application/json',
                 success: function(){
                     $('ul.dzamilpersaneg').empty()
-                    Initial_list_load()
+                    Initial_list_load(login_pare)
                     $('input.addition_input').val('');
                 },
                 error: function(){
@@ -21,7 +23,7 @@ function input_send(){
                 }        
             })
 
-            console.log($('ul.dzamilpersaneg'))            
+            //console.log($('ul.dzamilpersaneg'))            
         }
     })
 }
