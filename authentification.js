@@ -4,7 +4,6 @@ function first_autentification(){
         e.preventDefault();
         login_pare = btoa($('input[name="username"]').val() + ':' + $('input[name="password"]').val())
         Initial_list_load(login_pare)
-        return login_pare
     })
 }
 

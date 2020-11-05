@@ -1,9 +1,8 @@
 function input_send(){
-    login_pare = first_autentification()
-    $('button.addition_button').on('mousedown',function(){  
-        var input_value = $("input.addition_input").val() 
+    $('button.addition_button').on('mousedown',function(){
+        var input_value = $("input.addition_input").val()
         if (input_value.trim() != '') {
-            
+
             var post = {'description': input_value}
 
             $.ajax({
@@ -20,7 +19,7 @@ function input_send(){
                 },
                 error: function(){
                     alert('An error accured!');
-                }        
+                }
             })
 
             //console.log($('ul.dzamilpersaneg'))            
