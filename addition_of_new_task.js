@@ -1,27 +1,28 @@
 function input_send(){
-    $('button.addition_button').on('mousedown',function(){  
-        var input_value = $("input.addition_input").val() 
+    $('button.addition_button').on('mousedown',function(){
+        var input_value = $("input.addition_input").val()
         if (input_value.trim() != '') {
-            
+
             var post = {'description': input_value}
 
             $.ajax({
                 type: 'POST',
                 url: 'http://localhost:5000/tasks',
+                headers: {'Authorization': 'Basic ' + login_pare},
                 data: JSON.stringify(post),
                 processData: false,
                 contentType: 'application/json',
                 success: function(){
                     $('ul.dzamilpersaneg').empty()
-                    Initial_list_load()
+                    Initial_list_load(login_pare)
                     $('input.addition_input').val('');
                 },
                 error: function(){
                     alert('An error accured!');
-                }        
+                }
             })
 
-            console.log($('ul.dzamilpersaneg'))            
+            //console.log($('ul.dzamilpersaneg'))            
         }
     })
 }
