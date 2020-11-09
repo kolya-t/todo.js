@@ -46,6 +46,7 @@ function Initial_list_load(login_pare) {
         },
         error: function(){
             alert('An error accured!')
+            wrong_local_storage_login_pare()
         }
     })
 }
